@@ -1,0 +1,510 @@
+/* ==========================================================
+   About — страница об авторе
+   Читается как одна страница книги: сверху вниз,
+   один столбец, титул → главы → эпилог.
+   ========================================================== */
+
+.about {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 88px 24px 96px;
+  min-height: 100vh;
+  color: var(--parchment, #EFE1BE);
+  font-family: var(--font-serif, Georgia, serif);
+  position: relative;
+}
+
+/* Тонкая вертикальная линия-корешок слева — как у страницы книги */
+.about::before {
+  content: "";
+  position: absolute;
+  top: 88px;
+  bottom: 96px;
+  left: 12px;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(201, 169, 97, 0.18) 12%,
+    rgba(201, 169, 97, 0.18) 88%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+/* ==========================================================
+   1. Титульный лист
+   ========================================================== */
+
+.about-hero {
+  text-align: center;
+  padding-bottom: 56px;
+  margin-bottom: 64px;
+  position: relative;
+}
+
+.about-hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(201, 169, 97, 0.5),
+    transparent
+  );
+}
+
+/* Портрет в овальной золотой рамке */
+.about-portrait {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 169, 97, 0.5);
+  box-shadow:
+    inset 0 0 0 6px rgba(201, 169, 97, 0.04),
+    inset 0 0 0 7px rgba(201, 169, 97, 0.22),
+    0 0 60px -20px rgba(201, 169, 97, 0.5);
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(201, 169, 97, 0.12),
+      transparent 70%
+    ),
+    linear-gradient(180deg,
+      rgba(255, 255, 255, 0.02),
+      rgba(0, 0, 0, 0.25));
+}
+
+.about-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Монограмма-экслибрис вместо фото */
+.about-monogram {
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--gold-bright, #E8CE8A);
+  text-shadow: 0 0 24px rgba(201, 169, 97, 0.5);
+}
+
+.about-eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 0 22px;
+  position: relative;
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--gold, #C9A961);
+}
+
+.about-eyebrow::before,
+.about-eyebrow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 14px;
+  height: 1px;
+  background: var(--gold, #C9A961);
+  opacity: 0.5;
+}
+.about-eyebrow::before { left: 0; }
+.about-eyebrow::after  { right: 0; }
+
+.about-name {
+  margin: 0 0 14px;
+  font-family: var(--font-display, Georgia, serif);
+  font-size: clamp(30px, 5.4vw, 46px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: var(--parchment, #EFE1BE);
+  word-break: break-word;
+}
+
+.about-role {
+  margin: 0 0 22px;
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold-bright, #E8CE8A);
+}
+
+/* Тонкая линия-разделитель */
+.about-rule {
+  display: block;
+  width: 60px;
+  height: 1px;
+  margin: 0 auto;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(201, 169, 97, 0.7),
+    transparent
+  );
+}
+
+.about-tagline {
+  max-width: 480px;
+  margin: 24px auto 0;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  color: var(--muted, #8A7554);
+}
+
+/* ==========================================================
+   2. Главы
+   ========================================================== */
+
+.about-chapters {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  margin-bottom: 96px;
+}
+
+.about-chapter-head {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.about-chapter-numeral {
+  flex-shrink: 0;
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(201, 169, 97, 0.5);
+  border-radius: 50%;
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--gold-bright, #E8CE8A);
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(201, 169, 97, 0.14),
+      transparent 70%
+    );
+  text-shadow: 0 0 12px rgba(201, 169, 97, 0.4);
+}
+
+.about-chapter-title {
+  margin: 0;
+  font-family: var(--font-display, Georgia, serif);
+  font-size: clamp(20px, 3.6vw, 26px);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--parchment, #EFE1BE);
+}
+
+.about-chapter-body {
+  padding-left: 58px;
+  max-width: 62ch;
+}
+
+.about-chapter-body p {
+  margin: 0 0 18px;
+  font-size: 17px;
+  line-height: 1.78;
+  letter-spacing: 0.005em;
+  color: var(--parchment, #EFE1BE);
+  opacity: 0.92;
+}
+
+.about-chapter-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Буквица у первого абзаца главы */
+.about-first::first-letter {
+  float: left;
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 3.6em;
+  line-height: 0.82;
+  font-weight: 500;
+  color: var(--gold-bright, #E8CE8A);
+  padding: 0.06em 0.14em 0 0;
+  text-shadow: 0 0 30px rgba(201, 169, 97, 0.4);
+}
+
+/* ==========================================================
+   3. Навыки
+   ========================================================== */
+
+.about-skills {
+  max-width: 620px;
+  margin: 0 auto 96px;
+}
+
+.about-section-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 28px;
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--gold-bright, #E8CE8A);
+}
+
+.about-section-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(201, 169, 97, 0.4),
+    transparent
+  );
+}
+
+.about-section-title span {
+  color: var(--gold, #C9A961);
+}
+
+.about-skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.about-skill {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(201, 169, 97, 0.12);
+}
+
+.about-skill:last-child {
+  border-bottom: 0;
+}
+
+.about-skill-label {
+  margin: 0;
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold-dim, #8A6F33);
+  align-self: center;
+}
+
+.about-skill-value {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--parchment, #EFE1BE);
+  opacity: 0.92;
+}
+
+/* ==========================================================
+   4. Колофон — контакты
+   ========================================================== */
+
+.about-colophon {
+  text-align: center;
+  padding-top: 48px;
+  position: relative;
+}
+
+.about-colophon .about-rule {
+  margin-bottom: 32px;
+}
+
+.about-colophon-text {
+  margin: 0 0 22px;
+  font-size: 14px;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: var(--muted, #8A7554);
+}
+
+.about-contacts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.about-contact {
+  position: relative;
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--parchment, #EFE1BE);
+  padding: 4px 2px;
+  transition: color 0.3s ease;
+}
+
+.about-contact::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  height: 1px;
+  background: var(--gold, #C9A961);
+  transition:
+    left 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    right 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.about-contact:hover {
+  color: var(--gold-bright, #E8CE8A);
+}
+
+.about-contact:hover::after {
+  left: 0;
+  right: 0;
+}
+
+.about-fleuron {
+  display: block;
+  font-size: 18px;
+  color: var(--gold, #C9A961);
+  opacity: 0.65;
+}
+
+/* ==========================================================
+   5. Адаптив
+   ========================================================== */
+
+@media (max-width: 640px) {
+  .about {
+    padding: 56px 20px 72px;
+  }
+
+  .about::before {
+    left: 8px;
+    top: 56px;
+    bottom: 72px;
+  }
+
+  .about-hero {
+    padding-bottom: 40px;
+    margin-bottom: 48px;
+  }
+
+  .about-portrait {
+    width: 112px;
+    height: 112px;
+    margin-bottom: 24px;
+  }
+
+  .about-monogram {
+    font-size: 32px;
+  }
+
+  .about-name {
+    letter-spacing: 0.01em;
+  }
+
+  .about-role {
+    letter-spacing: 0.24em;
+    font-size: 0.72rem;
+  }
+
+  .about-tagline {
+    font-size: 15px;
+    padding: 0 8px;
+  }
+
+  .about-chapters {
+    gap: 48px;
+    margin-bottom: 72px;
+  }
+
+  .about-chapter-head {
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .about-chapter-numeral {
+    width: 34px;
+    height: 34px;
+    font-size: 13px;
+  }
+
+  .about-chapter-body {
+    padding-left: 0;
+  }
+
+  .about-chapter-body p {
+    font-size: 16px;
+    line-height: 1.72;
+  }
+
+  .about-first::first-letter {
+    font-size: 3.2em;
+    padding: 0.05em 0.12em 0 0;
+  }
+
+  .about-skills {
+    margin-bottom: 72px;
+  }
+
+  .about-skill {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 12px 0;
+  }
+
+  .about-skill-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+  }
+
+  .about-skill-value {
+    font-size: 15px;
+  }
+
+  .about-contacts {
+    gap: 22px;
+    margin-bottom: 32px;
+  }
+
+  .about-contact {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+  }
+}
+
+/* Уважение к настройке уменьшения движения */
+@media (prefers-reduced-motion: reduce) {
+  .about-contact,
+  .about-contact::after {
+    transition-duration: 0.01ms !important;
+  }
+}
