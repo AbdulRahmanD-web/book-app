@@ -58,7 +58,6 @@ body.light {
 .books {
   width: 100%;
   padding: 40px 20px;
-  background: var(--bg-body);
   min-height: 80dvh;
   transition: background 0.3s, color 0.3s;
 }

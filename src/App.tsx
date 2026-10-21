@@ -59,10 +59,6 @@ function App() {
           <a href="https://t.me/AbdulRahmanD_web" className="btn" target="_blank" rel="noopener noreferrer">Telegram</a>
         </div>
      </div>
-           <div className='theme_toggle'>
-          <button  className="theme-toggle">
-           </button>
-           </div>
     </div>
     </div>
 
