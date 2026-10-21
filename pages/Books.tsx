@@ -173,11 +173,11 @@ function Key(event: React.KeyboardEvent<HTMLInputElement>) {
 
           <div className='library_slider'>
             <div className='library_track'>
-              <div className='library_card'><img src="./img/Бк.webp" alt="" /></div>
-              <div className='library_card'><img src="./img/Дл.webp" alt="" /></div>
-              <div className='library_card'><img src="./img/Нс.webp" alt="" /></div>
-              <div className='library_card'><img src="./img/BL.webp" alt="" /></div>
-              <div className='library_card'><img src="./img/Gf.jpg" alt="" /></div>
+              <div className='library_card'><img src="/img/Бк.webp" alt="" /></div>
+              <div className='library_card'><img src="/img/Дл.webp" alt="" /></div>
+              <div className='library_card'><img src="/img/Нс.webp" alt="" /></div>
+              <div className='library_card'><img src="/img/BL.webp" alt="" /></div>
+              <div className='library_card'><img src="/img/Gf.jpg" alt="" /></div>
             </div>
           </div>
         </article>

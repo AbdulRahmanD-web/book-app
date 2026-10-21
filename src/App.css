@@ -359,6 +359,7 @@ a {
   border: 1px solid var(--leather-edge);
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-bottom: 10px;
 }
 .btn:hover{
   background-color: var(--btn-color);
@@ -375,6 +376,7 @@ a {
     radial-gradient(circle at 80% 85%,rgba(107,31,40,0.08),transparent 45%),
     radial-gradient(circle at 50% 50%,var(--leather) 0%,var(--leather-deep) 75%);;
 	top: 85px;
+  border: 1px solid var(--gold-bright);
 }
 
 .burger span:nth-child(1){
