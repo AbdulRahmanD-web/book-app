@@ -164,24 +164,6 @@ function Key(event: React.KeyboardEvent<HTMLInputElement>) {
           </div>
         </div>
       </section>
-
-      <section className='library'>
-        <article className='library_container'>
-          <h3 className='library_title'>Рекомендации от Автора:<br />
-            <span className='library_title-span'>Топ-5 книг.</span>
-          </h3>
-
-          <div className='library_slider'>
-            <div className='library_track'>
-              <div className='library_card'><img src="/img/Бк.webp" alt="" /></div>
-              <div className='library_card'><img src="/img/Дл.webp" alt="" /></div>
-              <div className='library_card'><img src="/img/Нс.webp" alt="" /></div>
-              <div className='library_card'><img src="/img/BL.webp" alt="" /></div>
-              <div className='library_card'><img src="/img/Gf.jpg" alt="" /></div>
-            </div>
-          </div>
-        </article>
-      </section>
     </>
   );
 }
