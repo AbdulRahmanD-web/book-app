@@ -355,8 +355,8 @@ a {
   border-radius: 2px;
   font-size: clamp(13px, 5vw ,14px);
   font-weight: 500;
-  color: var(--leather-edge) ;
-  border: 1px solid var(--leather-edge);
+  color: var(--gold-bright) ;
+  border: 1px solid var(--gold-bright);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 10px;
